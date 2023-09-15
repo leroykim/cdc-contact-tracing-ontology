@@ -9,7 +9,7 @@ from cdc_ctt.definitions.classes import *
 from cdc_ctt.definitions.data_properties import *
 
 
-class ClassGenerator(ABC):
+class IndividualGenerator(ABC):
     def __init__(self):
         self.start_date = datetime.datetime.strptime(
             Configuration.start_date, Configuration.date_format
@@ -35,7 +35,7 @@ class ClassGenerator(ABC):
         return random_date
 
 
-class PatientGenerator(ClassGenerator):
+class PatientGenerator(IndividualGenerator):
     def __init__(self):
         super().__init__()
 
@@ -46,7 +46,7 @@ class PatientGenerator(ClassGenerator):
         return patient
 
 
-class ContactTracingGenerator(ClassGenerator):
+class ContactTracingGenerator(IndividualGenerator):
     def __init__(self):
         super().__init__()
 
@@ -78,7 +78,7 @@ class ContactTracingGenerator(ClassGenerator):
         return contact_tracing
 
 
-class InterviewGenerator(ClassGenerator):
+class InterviewGenerator(IndividualGenerator):
     def __init__(self):
         super().__init__()
 
@@ -94,7 +94,7 @@ class InterviewGenerator(ClassGenerator):
         return interview
 
 
-class LocatingInformationGenerator(ClassGenerator):
+class LocatingInformationGenerator(IndividualGenerator):
     def __init__(self):
         super().__init__()
         self.fake = Faker("en_US")
@@ -133,7 +133,7 @@ class LocatingInformationGenerator(ClassGenerator):
         return locating_information
 
 
-class PreExistingConditionsGenerator(ClassGenerator):
+class PreExistingConditionsGenerator(IndividualGenerator):
     def __init__(self):
         super().__init__()
 
@@ -162,7 +162,7 @@ class PreExistingConditionsGenerator(ClassGenerator):
         return pre_existing_conditions
 
 
-class RiskFactorsGenerator(ClassGenerator):
+class RiskFactorsGenerator(IndividualGenerator):
     def __init__(self):
         super().__init__()
 
@@ -185,7 +185,7 @@ class RiskFactorsGenerator(ClassGenerator):
         return risk_factors
 
 
-class SARSCOV2TestGenerator(ClassGenerator):
+class SARSCOV2TestGenerator(IndividualGenerator):
     def __init__(self):
         super().__init__()
 
@@ -211,7 +211,7 @@ class SARSCOV2TestGenerator(ClassGenerator):
         return sars_cov2_test
 
 
-class SymptomsAndClinicalCourseGenerator(ClassGenerator):
+class SymptomsAndClinicalCourseGenerator(IndividualGenerator):
     def __init__(self):
         super().__init__()
 
