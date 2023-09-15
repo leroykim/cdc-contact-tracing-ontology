@@ -1,1 +1,1 @@
-# contact-tracing-data-generation
+# CDC Contact Tracing Ontology

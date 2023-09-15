@@ -1,0 +1,19 @@
+namespace: https://knacc.umbc.edu/dae-young/kim/ontologies/cdc-ctt#
+
+date_format : "%Y-%m-%d"
+start_date: "2020-01-01"
+end_date: "2020-12-31"
+
+YNUR: ['Y', 'N', 'U', 'R']
+YNPR: ['Y', 'N', 'P', 'R']
+PNUE: ['Pos', 'Neg', 'Unk', 'Equi']
+YN: ['Y', 'N']
+CONGREGATE: ["Corrections", "Dorm", "Group home", "Multi-family household", "Multi-generational household"]
+EMPLOYED: ["No-retired", "No-student", "No-unable to work", "No-unemployed", "Yes"]
+HCP: ["1stResponder", "AmbulatoryCare", "EMS", "Fire", "Hospice", "Hospital", "LawEnforcement", "LongTermCare", "UrgentCare"]
+CONTACT: ["DayCare", "Home", "Hospital/MedicalCare", "PlaceOfWorship", "RetailSetting", "School", "Shelter", "Travel/Transit", 
+           "Workplace"]
+ETHNICITY: ["HispanicOrLatino", "NotHispanicOrLatino"]
+GENDER: ["Female", "Male", "Other_Gender", "Unknown_Gender"]
+LANGUAGE: ["Bengali" , "Chinese" , "English" , "French" , "German" , "Hindi" , "Italian" , "Korean" , "Portuguese" , "Spanish"]
+RACE: ["AlaskaNative" , "AmericanIndian" , "Asian" , "BlackOrAfricanAmerian" , "NativeHawaiianOrOtherPacificIslander" , "White"]
