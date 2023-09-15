@@ -1,9 +1,9 @@
 from owlready2 import get_ontology, Thing
 from ctt_ontology.util.config import Configuration
 
-ctt_ontology = get_ontology(Configuration.namespace)
+ctt = get_ontology(Configuration.namespace)
 
-with ctt_ontology:
+with ctt:
 
     class ContactTracing(Thing):
         pass

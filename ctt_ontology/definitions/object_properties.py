@@ -2,9 +2,9 @@ from owlready2 import get_ontology, ObjectProperty
 from ctt_ontology.util.config import Configuration
 from ctt_ontology.definitions.classes import *
 
-ctt_ontology = get_ontology(Configuration.namespace)
+ctt = get_ontology(Configuration.namespace)
 
-with ctt_ontology:
+with ctt:
 
     class has_contact_tracing(ObjectProperty):
         domain = [Patient]
