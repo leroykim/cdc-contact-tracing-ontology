@@ -4,9 +4,9 @@ from faker import Faker
 import random
 import uuid
 
-from ctt_ontology.util.config import Configuration
-from ctt_ontology.definitions.classes import *
-from ctt_ontology.definitions.data_properties import *
+from cdc_ctt.util.config import Configuration
+from cdc_ctt.definitions.classes import *
+from cdc_ctt.definitions.data_properties import *
 
 
 class ClassGenerator(ABC):

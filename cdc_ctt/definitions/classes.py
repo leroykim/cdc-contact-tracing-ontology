@@ -1,5 +1,5 @@
 from owlready2 import get_ontology, Thing
-from ctt_ontology.util.config import Configuration
+from cdc_ctt.util.config import Configuration
 
 ctt = get_ontology(Configuration.namespace)
 

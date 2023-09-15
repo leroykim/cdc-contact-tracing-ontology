@@ -1,6 +1,6 @@
 from owlready2 import get_ontology, ObjectProperty
-from ctt_ontology.util.config import Configuration
-from ctt_ontology.definitions.classes import *
+from cdc_ctt.util.config import Configuration
+from cdc_ctt.definitions.classes import *
 
 ctt = get_ontology(Configuration.namespace)
 
