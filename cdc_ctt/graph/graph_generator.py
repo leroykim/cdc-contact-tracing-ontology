@@ -1,4 +1,5 @@
 from owlready2 import get_ontology
+from alive_progress import alive_bar
 from cdc_ctt.util.config import Configuration
 from cdc_ctt.graph.individual_generator import *
 from cdc_ctt.definitions.object_properties import *
@@ -43,8 +44,10 @@ class GraphGenerator:
 
     def generate(self, n):
         with self.ctt:
-            for _ in range(n):
-                self.generate_one()
+            with alive_bar(n, title="Generating patients", bar="bubbles") as bar:
+                for _ in range(n):
+                    self.generate_one()
+                    bar()
 
     def save(self, path):
         self.ctt.save(file=path, format="rdfxml")
