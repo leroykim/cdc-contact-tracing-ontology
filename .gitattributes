@@ -1,0 +1,11 @@
+data/patient_100k_2.owl filter=lfs diff=lfs merge=lfs -text
+data/patient_100k_4.owl filter=lfs diff=lfs merge=lfs -text
+data/patient_100k_7.owl filter=lfs diff=lfs merge=lfs -text
+data/patient_100k_9.owl filter=lfs diff=lfs merge=lfs -text
+data/patient_10k.owl filter=lfs diff=lfs merge=lfs -text
+data/patient_100k_1.owl filter=lfs diff=lfs merge=lfs -text
+data/patient_100k_3.owl filter=lfs diff=lfs merge=lfs -text
+data/patient_100k_5.owl filter=lfs diff=lfs merge=lfs -text
+data/patient_100k_6.owl filter=lfs diff=lfs merge=lfs -text
+data/patient_100k_8.owl filter=lfs diff=lfs merge=lfs -text
+data/patient_100k_0.owl filter=lfs diff=lfs merge=lfs -text
