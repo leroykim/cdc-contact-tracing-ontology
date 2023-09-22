@@ -161,3 +161,4 @@ cython_debug/
 Contact Tracing Data Generation V2.ipynb
 ctt_ontology.owl
 test.ipynb
+test_*.*
