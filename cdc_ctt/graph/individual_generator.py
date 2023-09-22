@@ -22,6 +22,9 @@ class IndividualGenerator(ABC):
     def generate(self):
         pass
 
+    def get_id(self):
+        return str(uuid.uuid4())
+
     def get_random_date(self) -> datetime.date:
         delta = self.end_date - self.start_date
         random_number_of_days = random.randint(0, delta.days)
@@ -40,7 +43,7 @@ class PatientGenerator(IndividualGenerator):
         super().__init__()
 
     def generate(self):
-        patient = Patient()
+        patient = Patient("Patient_" + self.get_id())
         patient.date_assigned_to_investigation.append(self.get_random_date())
         patient.patient_id.append(str(uuid.uuid4()))
         return patient
@@ -51,7 +54,7 @@ class ContactTracingGenerator(IndividualGenerator):
         super().__init__()
 
     def generate(self):
-        contact_tracing = ContactTracing()
+        contact_tracing = ContactTracing("ContactTracing_" + self.get_id())
         household_contact = random.choice(Configuration.YNUR)
         contact_tracing.any_household_contact.append(household_contact)
         if household_contact == "Y":
@@ -83,7 +86,7 @@ class InterviewGenerator(IndividualGenerator):
         super().__init__()
 
     def generate(self):
-        interview = Interview()
+        interview = Interview("Interview_" + self.get_id())
         interview.interview_1_occurred.append(random.choice(Configuration.YNPR))
         interview.interview_2_occurred.append(random.choice(Configuration.YNPR))
         interview.interview_3_occurred.append(random.choice(Configuration.YNPR))
@@ -101,7 +104,9 @@ class LocatingInformationGenerator(IndividualGenerator):
         self.gender = None
 
     def generate(self):
-        locating_information = LocatingInformation()
+        locating_information = LocatingInformation(
+            "LocatingInformation_" + self.get_id()
+        )
         locating_information.born_in_the_united_states.append(
             random.choice(Configuration.YNUR)
         )
@@ -138,7 +143,9 @@ class PreExistingConditionsGenerator(IndividualGenerator):
         super().__init__()
 
     def generate(self, gender):
-        pre_existing_conditions = PreExistingConditions()
+        pre_existing_conditions = PreExistingConditions(
+            "PreExistingConditions_" + self.get_id()
+        )
         pre_existing_conditions.chronic_liver_disease.append(
             random.choice(Configuration.YNPR)
         )
@@ -167,7 +174,7 @@ class RiskFactorsGenerator(IndividualGenerator):
         super().__init__()
 
     def generate(self):
-        risk_factors = RiskFactors()
+        risk_factors = RiskFactors("RiskFactors_" + self.get_id())
         congregate = random.choice(Configuration.YNUR)
         risk_factors.congregate.append(congregate)
         if congregate == "Y":
@@ -190,7 +197,7 @@ class SARSCOV2TestGenerator(IndividualGenerator):
         super().__init__()
 
     def generate(self):
-        sars_cov2_test = SARSCOV2Test()
+        sars_cov2_test = SARSCOV2Test("SARSCOV2Test_" + self.get_id())
         sars_cov2_test_occurred = random.choice(Configuration.YNUR)
         sars_cov2_test.sars_cov2_test_occurred.append(sars_cov2_test_occurred)
         if sars_cov2_test_occurred == "Y":
@@ -216,7 +223,9 @@ class SymptomsAndClinicalCourseGenerator(IndividualGenerator):
         super().__init__()
 
     def generate(self):
-        symptoms_and_clinical_course = SymptomsAndClinicalCourse()
+        symptoms_and_clinical_course = SymptomsAndClinicalCourse(
+            "SymptomsAndClinicalCourse_" + self.get_id()
+        )
         symptoms_and_clinical_course.abdominal_pain.append(
             random.choice(Configuration.YNUR)
         )
